@@ -1,0 +1,17 @@
+
+
+
+<!-- {{newproduct | json}} -->
+<div class="card" style="width: 30%;">
+    <img class="img-fluidimg-fluid" [src]="newproduct?.imgurl" alt="image product">
+    <br>
+    <br>
+    <div class="card-body">
+      <h5 class="card-title">name of product :  {{newproduct?.name}}</h5>
+      <h5 class="card-title">price :  {{newproduct?.price}}</h5>
+      <h5 class="card-title">quantity :  {{newproduct?.quantity}}</h5>
+      
+      
+      <button class="btn btn-outline-success" (click)="goback()">go back</button>
+    </div>
+  </div>

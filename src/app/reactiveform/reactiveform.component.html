@@ -1,0 +1,34 @@
+<div class="container">
+    <form [formGroup]="regestrationform">
+    <div class="form-group">
+        <label class="form-control">name</label>
+        <input formControlName="username" [class.is-invalied]="regestrationform.get('username')?.invalid && regestrationform.get('username')?.touched" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="form-control">passowred</label>
+        <input formControlName="passwored" type="password" class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="form-control">confirm passwored</label>
+        <input formControlName="confirmpassowred" type="password" class="form-control">
+    </div>
+    <div class="container " formGroupName="address">
+        <div class="form-group">
+            <label>city</label>
+            <input formControlName="city" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label>street</label>
+            <input formControlName="street" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label>postal code</label>
+            
+            <input formControlName="postal code" class="form-control" type="text">
+        </div>
+
+    </div>
+    <button (click)="loaddata()">get api data</button>
+    <input type="submit" value="SUPMITE" class="btn btn-primary">
+</form>
+</div>

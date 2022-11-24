@@ -1,0 +1,94 @@
+<h1>{{storname}}</h1>
+<br>
+<img [src]="storelogo"  alt="image">
+<img src={{storelogo}}  alt="image">
+
+<br>
+<br>
+
+
+ <h3 *ngIf="discountt">We offer an explicit discount of  ::{{Discount}}</h3> 
+
+<br>
+
+
+<div class=" mb-3">
+  <label for="ppp" class="form-label">category</label>
+<select  class="form-select"  id="ppp" aria-label="Default select example" [(ngModel)]="selectcat" (change)="change()">
+  <option  *ngFor="let cat of categorylist" [value]="cat.Id">{{cat.name}}</option>
+
+</select>
+</div>
+<br>
+<label>ENnter your name</label>
+<input type="text" class="form-control" [(ngModel)]="clientname">
+
+<br>
+
+
+<div *ngIf="ispurshased; then table; else div"> 
+</div>
+
+<ng-template #table>
+ <table class="table table-striped" id="mytable">
+ 
+    <thead>
+      <tr>
+        <th >Id</th>
+        <th >Name</th>
+        <th >Image</th>
+        <th >quantity</th>
+        <th >price</th>
+        <th >Needquntity</th>
+        <th >Buy</th>
+        
+
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pro of products" [class.d-none]="selectcat != pro.categoryid">
+        <th >{{pro.Id}}</th>
+        <td>{{pro.name}}</td>
+        <td><img [src]="pro.imgurl" alt="imge">></td>
+        <td>{{pro.quantity}}</td>
+        <td>{{pro.price}}</td>
+        <td><input #numpro type="number" class="form-control" [(ngModel)]="counteee"></td>
+        <td><button type="button" class="btn btn-primary" (click)="buy(pro.price,numpro.value)">buy</button></td>
+        
+       
+      </tr>
+     
+    </tbody>
+  </table>
+  number of count::==>        {{counteee}}  <button type="button" class="btn btn-primary" (click)="select()">click</button>
+ </ng-template>
+
+ <ng-template #div>
+  <div id="mydiv">
+  Thanks for purchasing from our Store   {{clientname}}
+</div>
+ </ng-template>
+
+  
+  
+
+
+  
+  <br>
+  <br>
+  order total price {{ordertotlprice}}
+
+
+
+  <br>
+  <br>
+  <br>
+  store name  as upper case using pipes== {{storname |uppercase }}
+   <br>
+   <br>
+   <br>
+   
+
+
+   	Discount will be in percent using pipes== {{Discount | percent }}

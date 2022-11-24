@@ -1,0 +1,77 @@
+
+
+ 
+
+
+
+
+<label>ENnter your name</label>
+<input type="text" class="form-control" [(ngModel)]="clientname">
+
+<br>
+<br>
+
+
+
+
+ <table class="table table-striped" id="mytable">
+ 
+    <thead>
+      <tr>
+        <th >Id</th>
+        <th >Name</th>
+        <th >Image</th>
+        <th >quantity</th>
+        <th >price</th>
+        <th >Needquntity</th>
+        <th >Buy</th>
+
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pro of listofproductfilter" >
+        <th >{{pro.Id}}</th>
+        <td>{{pro.name}}</td>
+        <td><img [src]="pro.imgurl" alt="imge">></td>
+        <td>{{pro.quantity}}</td>
+        <td>{{pro.price}}</td>
+        <td><input #numpro type="number" class="form-control" [(ngModel)]="counteee"></td>
+        <td><button type="button" class="btn btn-primary" (click)="buy(pro.price,numpro.value)">buy</button></td>
+       
+      </tr>
+     
+    </tbody>
+  </table>
+  number of count::==>        {{counteee}}  <button type="button" class="btn btn-primary" (click)="select()">click</button>
+ 
+
+ <ng-template #div>
+  <div id="mydiv">
+  Thanks for purchasing from our Store   {{clientname}}
+</div>
+ 
+
+  
+  
+
+
+  
+  <br>
+  <br>
+  order total price {{ordertotlprice}}
+
+
+
+  <br>
+  <br>
+  <br>
+  store name  as upper case using pipes== {{storname |uppercase }}
+   <br>
+   <br>
+   <br>
+   
+
+
+   	Discount will be in percent using pipes== {{Discount | percent }}
+

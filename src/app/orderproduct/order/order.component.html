@@ -1,0 +1,11 @@
+<div class=" mb-3">
+    <label for="ppp" class="form-label">category</label>
+  <select  class="form-select"  id="ppp" aria-label="Default select example" [(ngModel)]="orderselect" >
+    <option value="0" selected>ALL</option>
+    <option  *ngFor="let cat of categorylist" [value]="cat.Id">{{cat.name}}</option>
+  
+  </select>
+  </div>
+
+  <app-productli [sencatid]="orderselect" (totalpricechaneged)="ontotalpricechanged($event)"></app-productli>
+  order total price  {{  receiveordertotalprice}}

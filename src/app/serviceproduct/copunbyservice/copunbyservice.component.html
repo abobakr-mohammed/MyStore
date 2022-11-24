@@ -1,0 +1,34 @@
+<button class="btn btn-primary" (click)="getdata()">getproduct</button>
+<table class="table table-striped" id="mytable">
+ 
+    <thead>
+      <tr>
+        <th >Id</th>
+        <th >Name</th>
+        <th >Image</th>
+        <th >quantity</th>
+        <th >price</th>
+        <th >Needquntity</th>
+        <th >Buy</th>
+        <th >details</th>
+
+
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pro of products" >
+        <th >{{pro.Id}}</th>
+        <td>{{pro.name}}</td>
+        <td><img [src]="pro.imgurl" alt="imge">></td>
+        <td>{{pro.quantity}}</td>
+        <td>{{pro.price}}</td>
+        <td><input #numpro type="number" class="form-control" ></td>
+        <td><button type="button" class="btn btn-primary" >buy</button></td>
+        <td><button class="btn btn-success" (click)="selectprod(pro.Id)">details</button></td>
+       
+        <!-- <a class="btn btn-primary" [routerLink]="['/serviceorder',pro.Id]" role="button">details</a> -->
+      </tr>
+     
+    </tbody>
+  </table> 

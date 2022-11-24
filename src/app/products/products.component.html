@@ -1,0 +1,19 @@
+
+
+ <img src="{{storeinfo.imgurl}}" alt="imge"> 
+<button type="button" class="but but-primary" (click)="changefun()">change</button>
+<img   *ngIf="infimg" [src]="storeinfo.imgurl" alt="imge" class="img-fluif m-1">
+
+
+<h1>{{storeinfo.name}}</h1>
+<br>
+
+
+<ul>
+    <li *ngFor="let item of storeinfo.brnches">
+        {{item}}
+
+    </li>
+</ul>
+
+ 
